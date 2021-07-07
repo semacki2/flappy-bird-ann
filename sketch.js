@@ -1,4 +1,4 @@
-const TOTAL = 10;
+const TOTAL = 100;
 
 var birds = [];
 var savedBirds = [];
