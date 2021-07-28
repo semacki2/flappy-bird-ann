@@ -23,14 +23,14 @@ let bestBirdBrain;
 
 function setup() {
   createCanvas(800, 400);
-  pSliderSpeed = createP("Speed: 1");
+  pSliderSpeed = createP("  Simulation Speed: 1");
   slider = createSlider(1, 100, 1);
 
-  pGenCount = createP("Generation #" + genCount);
-  pPopSize = createP("Current Population Size: 1000");
-  pCurrentScore = createP("Current Score: " + 0);
-  pRecordScore = createP("Record Score: " + recordScore);
-  pPipeSpeed = createP("Pipe Speed: 5");
+  pGenCount = createP("  Generation #" + genCount);
+  pPopSize = createP("  Current Population Size: 1000");
+  pCurrentScore = createP("  Current Score: " + 0);
+  pRecordScore = createP("  Record Score: " + recordScore);
+  pPipeSpeed = createP("  Pipe Speed: 5");
   createP('');
 
   btnSaveBestBird = createButton('Save best bird');
@@ -94,19 +94,19 @@ function draw() {
     }
   
   //update the html stuffs
-  pSliderSpeed.html("Speed: " + slider.value());
+  pSliderSpeed.html("  Simulation Speed: " + slider.value());
 
-  pPopSize.html("Current Population Size: " + birds.length);
-  pCurrentScore.html("Current Score: " + birds[0].score);
-  pPipeSpeed.html("Pipe Speed: " + round(pipeSpeed, 1));
+  pPopSize.html("  Current Population Size: " + birds.length);
+  pCurrentScore.html("  Current Score: " + birds[0].score);
+  pPipeSpeed.html("  Pipe Speed: " + round(pipeSpeed, 1));
 
   if (birds[0].score > recordScore) {
     recordScore = birds[0].score;
     bestBirdBrain = birds[0].brain.copy();
   }
 
-  pRecordScore.html("Record Score: " + recordScore);
-  pGenCount.html("Generation #" + genCount);
+  pRecordScore.html("  Record Score: " + recordScore);
+  pGenCount.html("  Generation #" + genCount);
 }
 
 function saveBestBird() {
